@@ -1,0 +1,9 @@
+<div class="playlist">
+  <div class="playlist-container">
+    <ng-container *ngFor="let movie of movies">
+      <div class="movie-card" (click)="movieClicked(movie)">
+        <img class="poster" [src]="movie.poster" [alt]="movie.name" />
+      </div>
+    </ng-container>
+  </div>
+</div>

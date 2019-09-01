@@ -1,0 +1,9 @@
+<div *ngIf="movie" class="video-container">
+  <h3>{{ movie.name | upperCase }}</h3>
+  <iframe
+    class="video-player"
+    width="300"
+    height="300"
+    [src]="movie.trailer | safeUrl"
+  ></iframe>
+</div>

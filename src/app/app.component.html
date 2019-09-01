@@ -1,0 +1,4 @@
+<div>
+  <app-player [movie]="selectedMovie"></app-player>
+  <app-playlist [movies]="movies" (selectMovie)="changeSelectedMovie($event)"></app-playlist>
+</div>

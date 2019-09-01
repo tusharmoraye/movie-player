@@ -1,0 +1,31 @@
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-player {
+  width: 960px;
+  height: 540px;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .video-player {
+    width: 800px;
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .video-player {
+    width: 640px;
+    height: 360px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video-player {
+    width: 426px;
+    height: 240px;
+  }
+}
