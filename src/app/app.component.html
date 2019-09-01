@@ -1,4 +1,15 @@
 <div>
-  <app-player [movie]="selectedMovie"></app-player>
-  <app-playlist [movies]="movies" (selectMovie)="changeSelectedMovie($event)"></app-playlist>
+  <div *ngIf="!movies.length && !err" class="loader"></div>
+
+  <div *ngIf="movies.length">
+    <app-player [movie]="selectedMovie"></app-player>
+    <app-playlist
+      [movies]="movies"
+      (selectMovie)="changeSelectedMovie($event)"
+    ></app-playlist>
+  </div>
+
+  <div class="error" *ngIf="err">
+    <h2>Something went wrong.</h2>
+  </div>
 </div>

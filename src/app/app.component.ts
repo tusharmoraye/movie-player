@@ -13,13 +13,19 @@ export class AppComponent implements OnInit {
 
   movies: Movie[] = [];
   selectedMovie: Movie = null;
+  err: boolean = false;
   ngOnInit() {
-    this.webService.getMovieData().subscribe(res => {
-      this.movies = res;
-      this.selectedMovie = this.movies[0];
-    });
+    this.webService.getMovieData().subscribe(
+      res => {
+        this.movies = res;
+        this.selectedMovie = this.movies[0];
+      },
+      err => {
+        console.log(err);
+        this.err = true;
+      }
+    );
   }
-
 
   changeSelectedMovie(event) {
     this.selectedMovie = event;
